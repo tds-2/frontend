@@ -320,7 +320,6 @@ Verificar:
 - backend ejecutándose
 - puerto correcto
 - URL correcta
-- certificados HTTPS válidos
 
 ---
 
@@ -367,12 +366,3 @@ Importante:
 - realizar pruebas después de actualizar
 
 ---
-
-# Tecnologías Utilizadas
-
-- Angular
-- TypeScript
-- RxJS
-- HTML
-- CSS
-- npm
