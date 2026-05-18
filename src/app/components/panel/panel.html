@@ -1,0 +1,100 @@
+<div class="admin-layout" [class.sidebar-mini]="sidebarContraido">
+    <!--Creamos sidebar izquierdo-->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <div class="brand-text">
+                SistemaJFE-V1
+            </div>
+
+        </div>
+        <!-- Contenido del menu-->
+        <div class="sidebar-content">
+            <div class="menu-block">
+                <div class="menu-item menu-item-main" (click)="toggleDashboard()">
+                    <div class="menu-left">
+                        <span class="menu-left">ↂ</span>
+                        <span class="menu-label">Dashboard</span>
+                    </div>
+                    <span class="menu-arrow">{{dashboardAbierto? 'v':'>'}}</span>
+                </div>
+                <div class="submenu" *ngIf="dashboardAbierto">
+                    <div class="submenu-item active" (click)="cargarColaboradores()">
+                        <span class="submenu-circle"></span>
+                        <span class="menu-label">Colaborador</span>
+                    </div>
+                    <div class="submenu-item">
+                        <span class="submenu-circle"></span>
+                        <span class="submenu-label">Dashboard V2</span>
+                    </div>
+                    <div class="submenu-item">
+                        <span class="submenu-circle"></span>
+                        <span class="submenu-label">Dashboard V3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!--zONA DERECHA DEL PANEL-->
+    <div class="main-wrapper">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" (click)="toggleSidebar()">≡</button>
+                <a href="#">Home</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="topbar-right">
+                <span class="top-icon">🔎︎</span>
+                <div class="user-info"></div>
+                <div class="avatar"></div>
+                <span>{{usuario}}</span>
+            </div>
+        </header>
+        <main class="content-area">
+            <div class="cargando">
+                <h2>Seleccione una opcion del menu</h2>
+                <div *ngIf="cargando && mostrarTabla">
+                    <h2>Cargando la informacion....</h2>
+
+                </div>
+                <div *ngIf="error" class="error">
+                    {{error}}
+                </div>
+                <table class="table" *ngIf="mostrarTabla && !cargando && colaboradores.length>0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>DNI</th>
+                            <th>Sexo</th>
+                            <th>Direccion</th>
+                            <th>Empresa</th>
+                            <th>Registro</th>
+                            <th>Modificacion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of colaboradores">
+                            <td>{{item.idColaborador}}</td>
+                            <td>{{item.nombres}}</td>
+                            <td>{{item.apellidos}}</td>
+                            <td>{{item.dni}}</td>
+                            <td>{{item.sexo}}</td>
+                            <td>{{item.direccion}}</td>
+                            <td>{{item.empresa.razonSocial}}</td>
+                            <td>{{item.fechaRegistro}}</td>
+                            <td>{{item.modificacion}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="mostrarTabla && !cargando && colaboradores.length == 0 && !error">
+                    No hay colaboradores registrados
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <span>Copyright @ 2026 <strong>Ing. Informatica</strong></span>
+        </footer>
+    </div>
+</div>

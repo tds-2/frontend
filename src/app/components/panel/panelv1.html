@@ -1,0 +1,50 @@
+<div class="admin-layout" [class.sidebar-mini]="sidebarContraido">
+    <!--Creamos sidebar izquierdo-->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <div class="brand-text">
+                SistemaJFE-V1
+            </div>
+
+        </div>
+        <!-- Contenido del menu-->
+        <div class="sidebar-content">
+            <div class="menu-block">
+                <div class="menu-item menu-item-main" (click)="toggleDashboard()">
+                    <div class="menu-left">
+                        <span class="menu-left">ↂ</span>
+                        <span class="menu-label">Dashboard</span>
+                    </div>
+                    <span class="menu-arrow">{{dashboardAbierto? 'v':'>'}}</span>
+                </div>
+               <!-- <div class="submenu" *ngIf="dashboardAbierto">
+                    <div class="submenu-item-active" *ngFor="let item of dashboardAbierto">
+                        <span class="submenu-circle"></span>
+                        <span class="menu-label">{{item}}</span>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </aside>
+    <div class="main-wrapper">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" (click)="toggleSidebar()">≡</button>
+                <a href="#">Home</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="topbar-render-right">
+                <span class="top-icon"></span>
+                <div class="user-info">
+                    <span>{{usuario}}</span>
+                </div>
+            </div>
+        </header>
+        <main class="content-area"></main>
+        <footer class="footer">
+            <span>Copyright @ 2026 <strong>Ing. Informatica</strong></span>
+        </footer>
+    </div>
+</div>
