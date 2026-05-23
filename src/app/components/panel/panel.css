@@ -1,3 +1,5 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
 /* Reseteo básico: aplica a todos los elementos */
 * {
     box-sizing: border-box;
@@ -515,11 +517,16 @@
 
 .btn {
     border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    margin: 0 3px;
+    border-radius: 6px;
     color: white;
     cursor: pointer;
     font-size: 13px;
+    width: 32px;
 }
 
 .btn-edit {
@@ -527,7 +534,7 @@
 }
 
 .btn-details {
-    background: #198754;
+    background: #e0a800;
 }
 
 .btn-delete {
@@ -536,4 +543,17 @@
 
 .btn:hover {
     opacity: 0.85;
+}
+
+.acciones-columna {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.acciones.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 58px;
 }

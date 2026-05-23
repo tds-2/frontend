@@ -54,6 +54,7 @@ export class Panel{
         this.error = '';
         this.mostrarTabla = false;
         this.colaboradorService.listar().subscribe({
+            
             next: (data) => {
                 console.log('Datos recibidos:',data);
                 this.colaboradores=data;

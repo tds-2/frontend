@@ -52,15 +52,14 @@
         </header>
         <main class="content-area">
             <div class="cargando">
-                <h2>Seleccione una opcion del menu</h2>
-                <div *ngIf="cargando && mostrarTabla">
+                <h2 *ngIf="cargando">Seleccione una opcion del menu</h2>
+                <div *ngIf="cargando && !mostrarTabla">
                     <h2>Cargando la informacion....</h2>
-
                 </div>
                 <div *ngIf="error" class="error">
                     {{error}}
                 </div>
-                <table class="table" *ngIf="mostrarTabla && !cargando && colaboradores.length>0">
+                <table class="tabla" *ngIf="mostrarTabla && !cargando && colaboradores.length>0">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -72,6 +71,7 @@
                             <th>Empresa</th>
                             <th>Registro</th>
                             <th>Modificacion</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,6 +85,21 @@
                             <td>{{item.empresa.razonSocial}}</td>
                             <td>{{item.fechaRegistro}}</td>
                             <td>{{item.modificacion}}</td>
+                            <td>
+                                <div class="acciones-columna">
+                                    <div class="acciones.botones">
+                                        <button class="btn btn-edit">
+                                            <i class="bi bi-pencil-fill"></i>
+                                        </button>
+                                        <button class="btn btn-details">
+                                            <i class="bi bi-eye-fill"></i>
+                                        </button>
+                                        <button class="btn btn-delete">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
