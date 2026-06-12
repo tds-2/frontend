@@ -1,0 +1,48 @@
+<div class="detalle-wrapper">
+    <div class="detalle-header">
+        <h2>Detalle Colaborador</h2>
+        <button class="btn-volver bi-arrow-return-left">
+            Volver
+        </button>
+    </div>
+    <p *ngIf="cargando">Cargando Detalle</p>
+    <p *ngIf="mensajeError" class="error-text">
+        {{mensajeError}}
+    </p>
+    <div class="detalle-card" *ngIf="!cargando && colaborador">
+        <div class="detalle-grid">
+            <div class="detalle-item">
+                <label for="">Id</label>
+                <span>{{colaborador.idColaborador}}</span>
+            </div>
+            <div class="detalle-item">
+                <label for="">Nombres</label>
+                <span>{{colaborador.nombres}}</span>
+            </div>
+            <div class="detalle-item">
+                <label for="">Apellidos</label>
+                <span>{{colaborador.apellidos}}</span>
+            </div>
+            <div class="detalle-item">
+                <label for="">DNI</label>
+                <span>{{colaborador.dni}}</span>
+            </div>
+            <div class="detalle-item">
+                <label for="">Sexo</label>
+                <span>{{colaborador.sexo}}</span>
+            </div>
+            <div class="detalle-item">
+                <label for="">Direccion</label>
+                <span>{{colaborador.direccion}}</span>
+            </div>
+            <div class="detalle-item">
+                <label for="">Empresa</label>
+                <span>{{colaborador.idEmpresa}}</span>
+            </div>
+            <div class="detalle-item">
+                <label for="">FechaRegistro</label>
+                <span>{{colaborador.fechaRegistro | date:'dd/MM/yyyy HH:mm'}}</span>
+            </div>
+        </div>
+    </div>
+</div>

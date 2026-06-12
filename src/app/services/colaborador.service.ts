@@ -27,4 +27,8 @@ export class ColaboradorService {
         // Hace una peticion Get y devuelve una lista de colaboradores
         return this.http.get<Colaborador[]>(`${this.api}/listar`);
     }
+
+    obtenerDetalle(id:number):Observable<Colaborador>{
+        return this.http.get<Colaborador>(`${this.api}/detalle/${id}`);
+    }
 }

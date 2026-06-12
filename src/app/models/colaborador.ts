@@ -13,7 +13,7 @@ export interface Colaborador {
     sexo:string;
     direccion:string;
     idEmpresa:number;
-    empresa:Empresa;
+    empresa:Empresa | any | null;
     fechaRegistro:string;
     modificacion:string|null;
 }
