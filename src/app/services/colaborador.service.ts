@@ -31,4 +31,10 @@ export class ColaboradorService {
     obtenerDetalle(id:number):Observable<Colaborador>{
         return this.http.get<Colaborador>(`${this.api}/detalle/${id}`);
     }
+
+    /*
+    editar(id:number,colaborador:Colaborador):Observable<any>{
+        return this.http.post<colaborador>(`${this.api}/editar/${id}`);
+    }
+        */
 }

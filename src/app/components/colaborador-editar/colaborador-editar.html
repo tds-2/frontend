@@ -1,1 +1,43 @@
-<p>colaborador-editar works!</p>
+<div class="editar-wrapper">
+    <div class="editar-card" *ngIf="!cargando">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Id</label>
+                <input type="number" [(ngModel)]="colaborador.idColaborador" readonly>
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" [(ngModel)]="colaborador.nombres">
+            </div>
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text" [(ngModel)]="colaborador.apellidos">
+            </div>
+            <div class="form-group">
+                <label>DNI</label>
+                <input type="text" [(ngModel)]="colaborador.dni">
+            </div>
+            <div class="form-group">
+                <label>Sexo</label>
+                <select [(ngModel)]="colaborador.sexo">
+                    <option value="">Seleccione</option>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Direccion</label>
+                <input type="text" [(ngModel)]="colaborador.direccion">
+            </div>
+            <div class="form-group">
+                <label>IdEmpresa</label>
+                <input type="number" [(ngModel)]="colaborador.idEmpresa">
+            </div>
+        </div>
+        <div class="form-action">
+            <button class="btn-guardar" (click)="guardarCambios()" [disabled]="guardando">
+                {{guardando ? 'Guardando...':'Guardar cambios'}}
+            </button>
+        </div>
+    </div>
+</div>
